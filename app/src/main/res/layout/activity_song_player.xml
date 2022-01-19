@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".activity.SongPlayer">
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_animation"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="55dp"
+        android:contentDescription="@string/icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_fileName="headphone_anim.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
+    <TextView
+        android:id="@+id/song_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:fadingEdge="horizontal"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/songtitle"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottie_animation"
+        app:layout_constraintVertical_bias="0.087" />
+
+    <TextView
+        android:id="@+id/start_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/_00_00"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/song_name" />
+
+    <TextView
+        android:id="@+id/song_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/_00_00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/song_name" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toStartOf="@+id/song_duration"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/start_time"
+        app:layout_constraintTop_toBottomOf="@+id/song_name" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintVertical_bias="0.384">
+
+        <ImageView
+            android:id="@+id/btn_repeat"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?selectableItemBackground"
+            android:contentDescription="@string/repeatbutton"
+            app:srcCompat="@drawable/ic_repeat" />
+
+        <ImageView
+            android:id="@+id/btn_previous"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?selectableItemBackground"
+            android:contentDescription="@string/previousbutton"
+            app:srcCompat="@drawable/ic_previous" />
+
+        <ImageView
+            android:id="@+id/btn_pause"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="?selectableItemBackground"
+            android:contentDescription="@string/pausebutton"
+            app:srcCompat="@drawable/ic_pause" />
+
+        <ImageView
+            android:id="@+id/btn_play"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="?selectableItemBackground"
+            android:contentDescription="@string/playbutton"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_play" />
+
+        <ImageView
+            android:id="@+id/btn_forward"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?selectableItemBackground"
+            android:contentDescription="@string/nextbutton"
+            app:srcCompat="@drawable/ic_next" />
+
+        <ImageView
+            android:id="@+id/btn_shuffle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?selectableItemBackground"
+            android:contentDescription="@string/shufflebutton"
+            app:srcCompat="@drawable/ic_shuffle" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
