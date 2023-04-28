@@ -4,6 +4,8 @@
     package="com.example.mood">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -41,6 +43,13 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <service android:name=".MusicPlayerService"
+            android:foregroundServiceType="mediaPlayback"
+            android:exported="false">
+        </service>
+        <receiver android:name=".MusicNotificationReceiver"
+            android:exported="false">
+        </receiver>
     </application>
 
 </manifest>
